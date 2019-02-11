@@ -1,0 +1,622 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+  no-trivial-tests: true
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    java-assume-inputs-non-null: true
+    max-nondet-array-length: 10
+    string-non-empty: true
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+units:
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/join/RedundantSelfJoinExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/join/RedundantSelfJoinExecutor.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/dbschema/DBMetadata.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/dbschema/DBMetadata.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/injection/IntermediateQueryFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/IntermediateQueryFactory.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/exception/EmptyQueryException.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/exception/EmptyQueryException.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/exception/InvalidQueryOptimizationProposalException.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/exception/InvalidQueryOptimizationProposalException.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/EmptyNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/EmptyNode.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/ExtensionalDataNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/ExtensionalDataNode.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/InnerJoinNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/InnerJoinNode.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/impl/QueryTreeComponent.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/impl/QueryTreeComponent.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/impl/NodeCentricOptimizationResultsImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/impl/NodeCentricOptimizationResultsImpl.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/RelationPredicate.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/RelationPredicate.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/Variable.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/Variable.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/SubstitutionFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/SubstitutionFactory.java
+    # Child of RedundantSelfJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/impl/ImmutableUnificationTools.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/impl/ImmutableUnificationTools.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/construction/impl/ConstructionNodeCleaningExecutorImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/construction/impl/ConstructionNodeCleaningExecutorImpl.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/construction/ConstructionNodeCleaningExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/construction/ConstructionNodeCleaningExecutor.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/IntermediateQuery.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/IntermediateQuery.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/ConstructionNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/ConstructionNode.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/QueryNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/QueryNode.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/ConstructionNodeCleaningProposal.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/ConstructionNodeCleaningProposal.java
+    # Child of ConstructionNodeCleaningExecutorImpl.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/NodeCentricOptimizationResults.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/NodeCentricOptimizationResults.java
+  - target:
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/SubstitutionFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/SubstitutionFactory.java
+    # Child of SubstitutionFactory.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/ImmutableTerm.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/ImmutableTerm.java
+    # Child of SubstitutionFactory.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/VariableOrGroundTerm.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/VariableOrGroundTerm.java
+    # Child of SubstitutionFactory.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/utils/VariableGenerator.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/utils/VariableGenerator.java
+  - target:
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/type/impl/ConcreteNumericRDFDatatypeImpl.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/type/impl/ConcreteNumericRDFDatatypeImpl.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/leftjoin/LeftToInnerJoinExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/leftjoin/LeftToInnerJoinExecutor.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/exception/MinorOntopInternalBugException.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/exception/MinorOntopInternalBugException.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/exception/InvalidIntermediateQueryException.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/exception/InvalidIntermediateQueryException.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/SimpleNodeCentricExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/SimpleNodeCentricExecutor.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/LeftJoinOptimizationProposal.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/LeftJoinOptimizationProposal.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/SubstitutionPropagationProposal.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/SubstitutionPropagationProposal.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/impl/SubstitutionPropagationProposalImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/impl/SubstitutionPropagationProposalImpl.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/impl/ImmutabilityTools.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/impl/ImmutabilityTools.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/ImmutableSubstitution.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/ImmutableSubstitution.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/InjectiveVar2VarSubstitution.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/InjectiveVar2VarSubstitution.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/utils/CoreUtilsFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/utils/CoreUtilsFactory.java
+    # Child of LeftToInnerJoinExecutor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/utils/ImmutableCollectors.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/utils/ImmutableCollectors.java
+  - target:
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/impl/NodeBasedQueryTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/impl/NodeBasedQueryTransformer.java
+    # Child of NodeBasedQueryTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/BinaryOrderedOperatorNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/BinaryOrderedOperatorNode.java
+    # Child of NodeBasedQueryTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/DistinctVariableOnlyDataAtom.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/DistinctVariableOnlyDataAtom.java
+    # Child of NodeBasedQueryTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/QueryTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/QueryTransformer.java
+    # Child of NodeBasedQueryTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/node/HomogeneousQueryNodeTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/node/HomogeneousQueryNodeTransformer.java
+  - target:
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/impl/JoinLikeNodeImpl.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/impl/JoinLikeNodeImpl.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/datalog/impl/DatalogTools.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/datalog/impl/DatalogTools.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/evaluator/TermNullabilityEvaluator.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/evaluator/TermNullabilityEvaluator.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/IQTree.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/IQTree.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/evaluator/ExpressionEvaluator.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/evaluator/ExpressionEvaluator.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/JoinLikeNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/JoinLikeNode.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/type/TypeFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/type/TypeFactory.java
+    # Child of JoinLikeNodeImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/substitution/impl/ImmutableSubstitutionTools.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/substitution/impl/ImmutableSubstitutionTools.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/join/RedundantJoinFKExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/join/RedundantJoinFKExecutor.java
+    # Child of RedundantJoinFKExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/tools/VariableOccurrenceAnalyzer.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/tools/VariableOccurrenceAnalyzer.java
+    # Child of RedundantJoinFKExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/tools/impl/NaiveVariableOccurrenceAnalyzerImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/tools/impl/NaiveVariableOccurrenceAnalyzerImpl.java
+    # Child of RedundantJoinFKExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/InnerJoinOptimizationProposal.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/InnerJoinOptimizationProposal.java
+  - target:
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/impl/FakeMappingExtractor.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/impl/FakeMappingExtractor.java
+    # Child of FakeMappingExtractor.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/exception/DBMetadataExtractionException.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/exception/DBMetadataExtractionException.java
+    # Child of FakeMappingExtractor.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/exception/MappingException.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/exception/MappingException.java
+    # Child of FakeMappingExtractor.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/tools/ExecutorRegistry.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/tools/ExecutorRegistry.java
+    # Child of FakeMappingExtractor.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/pp/PreProcessedMapping.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/pp/PreProcessedMapping.java
+    # Child of FakeMappingExtractor.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/MappingExtractor.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/MappingExtractor.java
+    # Child of FakeMappingExtractor.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/OBDASpecInput.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/OBDASpecInput.java
+    # Child of FakeMappingExtractor.class
+    - dir: core/obda/target/classes
+      file: it/unibz/inf/ontop/spec/ontology/Ontology.class
+      sourceDir: core/obda/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/ontology/Ontology.java
+  - target:
+    - dir: client/protege/target/classes
+      file: it/unibz/inf/ontop/protege/core/OBDADataSourceFactory.class
+      sourceDir: client/protege/src/main/java
+      sourceFile: it/unibz/inf/ontop/protege/core/OBDADataSourceFactory.java
+  - target:
+    - dir: client/cli/target/classes
+      file: it/unibz/inf/ontop/cli/OntopMappingV1ToV3.class
+      sourceDir: client/cli/src/main/java
+      sourceFile: it/unibz/inf/ontop/cli/OntopMappingV1ToV3.java
+    # Child of OntopMappingV1ToV3.class
+    - dir: db/rdb/target/classes
+      file: it/unibz/inf/ontop/injection/OntopSQLCoreSettings.class
+      sourceDir: db/rdb/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/OntopSQLCoreSettings.java
+    # Child of OntopMappingV1ToV3.class
+    - dir: db/rdb/target/classes
+      file: it/unibz/inf/ontop/injection/OntopSQLCredentialSettings.class
+      sourceDir: db/rdb/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/OntopSQLCredentialSettings.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/transformer/impl/ExplicitEqualityTransformerImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transformer/impl/ExplicitEqualityTransformerImpl.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/exception/OntopInternalBugException.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/exception/OntopInternalBugException.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/UnaryIQTree.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/UnaryIQTree.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/IQTreeTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/IQTreeTransformer.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/impl/ChildTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/impl/ChildTransformer.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/impl/CompositeIQTreeTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/impl/CompositeIQTreeTransformer.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/transform/impl/DefaultNonRecursiveIQTreeTransformer.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transform/impl/DefaultNonRecursiveIQTreeTransformer.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/transformer/ExplicitEqualityTransformer.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/transformer/ExplicitEqualityTransformer.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/AtomFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/AtomFactory.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/AtomPredicate.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/AtomPredicate.java
+    # Child of ExplicitEqualityTransformerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/DataAtom.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/DataAtom.java
+  - target:
+    - dir: client/protege/target/classes
+      file: it/unibz/inf/ontop/protege/gui/component/AutoSuggestComboBox.class
+      sourceDir: client/protege/src/main/java
+      sourceFile: it/unibz/inf/ontop/protege/gui/component/AutoSuggestComboBox.java
+  - target:
+    - dir: mapping/sql/r2rml/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/serializer/OBDAMappingTransformer.class
+      sourceDir: mapping/sql/r2rml/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/serializer/OBDAMappingTransformer.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/atom/TargetAtom.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/atom/TargetAtom.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/functionsymbol/DatatypePredicate.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/functionsymbol/DatatypePredicate.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/functionsymbol/ExpressionOperation.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/functionsymbol/ExpressionOperation.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/functionsymbol/Predicate.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/functionsymbol/Predicate.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/functionsymbol/URITemplatePredicate.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/functionsymbol/URITemplatePredicate.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/type/LanguageTag.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/type/LanguageTag.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/type/RDFDatatype.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/type/RDFDatatype.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/obda/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/PrefixManager.class
+      sourceDir: core/obda/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/PrefixManager.java
+    # Child of OBDAMappingTransformer.class
+    - dir: mapping/sql/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/impl/SQLQueryImpl.class
+      sourceDir: mapping/sql/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/impl/SQLQueryImpl.java
+    # Child of OBDAMappingTransformer.class
+    - dir: mapping/sql/r2rml/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/parser/impl/R2RMLVocabulary.class
+      sourceDir: mapping/sql/r2rml/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/parser/impl/R2RMLVocabulary.java
+    # Child of OBDAMappingTransformer.class
+    - dir: mapping/sql/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/pp/SQLPPTriplesMap.class
+      sourceDir: mapping/sql/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/pp/SQLPPTriplesMap.java
+    # Child of OBDAMappingTransformer.class
+    - dir: core/obda/target/classes
+      file: it/unibz/inf/ontop/utils/URITemplates.class
+      sourceDir: core/obda/src/main/java
+      sourceFile: it/unibz/inf/ontop/utils/URITemplates.java
+  - target:
+    - dir: mapping/sql/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/parser/impl/RAExpressionAttributes.class
+      sourceDir: mapping/sql/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/parser/impl/RAExpressionAttributes.java
+    # Child of RAExpressionAttributes.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/Term.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/Term.java
+    # Child of RAExpressionAttributes.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/dbschema/QualifiedAttributeID.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/dbschema/QualifiedAttributeID.java
+    # Child of RAExpressionAttributes.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/dbschema/QuotedID.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/dbschema/QuotedID.java
+    # Child of RAExpressionAttributes.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/dbschema/RelationID.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/dbschema/RelationID.java
+    # Child of RAExpressionAttributes.class
+    - dir: mapping/sql/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/parser/exception/IllegalJoinException.class
+      sourceDir: mapping/sql/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/parser/exception/IllegalJoinException.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/leftjoin/LeftJoinRightChildNormalizationAnalyzerImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/leftjoin/LeftJoinRightChildNormalizationAnalyzerImpl.java
+    # Child of LeftJoinRightChildNormalizationAnalyzerImpl.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/iq/node/DataNode.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/node/DataNode.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/projection/ProjectionShrinkingExecutorImpl.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/projection/ProjectionShrinkingExecutorImpl.java
+    # Child of ProjectionShrinkingExecutorImpl.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/proposal/ProjectionShrinkingProposal.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/proposal/ProjectionShrinkingProposal.java
+  - target:
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/transformer/impl/LegacyABoxFactIntoMappingConverter.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/transformer/impl/LegacyABoxFactIntoMappingConverter.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/datalog/CQIE.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/datalog/CQIE.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/datalog/Datalog2QueryMappingConverter.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/datalog/Datalog2QueryMappingConverter.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/datalog/DatalogFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/datalog/DatalogFactory.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/obda/target/classes
+      file: it/unibz/inf/ontop/injection/SpecificationFactory.class
+      sourceDir: core/obda/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/SpecificationFactory.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/Function.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/Function.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/IRIConstant.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/IRIConstant.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/TermFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/TermFactory.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/ValueConstant.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/ValueConstant.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/obda/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/Mapping.class
+      sourceDir: core/obda/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/Mapping.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: mapping/core/target/classes
+      file: it/unibz/inf/ontop/spec/mapping/transformer/ABoxFactIntoMappingConverter.class
+      sourceDir: mapping/core/src/main/java
+      sourceFile: it/unibz/inf/ontop/spec/mapping/transformer/ABoxFactIntoMappingConverter.java
+    # Child of LegacyABoxFactIntoMappingConverter.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/utils/UriTemplateMatcher.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/utils/UriTemplateMatcher.java
+  - target:
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/iq/executor/join/LooseFDRedundantSelfJoinExecutor.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/iq/executor/join/LooseFDRedundantSelfJoinExecutor.java
+    # Child of LooseFDRedundantSelfJoinExecutor.class
+    - dir: core/optimization/target/classes
+      file: it/unibz/inf/ontop/injection/OntopOptimizationSettings.class
+      sourceDir: core/optimization/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/OntopOptimizationSettings.java
+  - target:
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/injection/IntermediateQueryFactory.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/injection/IntermediateQueryFactory.java
+    # Child of IntermediateQueryFactory.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/ImmutableExpression.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/ImmutableExpression.java
+    # Child of IntermediateQueryFactory.class
+    - dir: core/model/target/classes
+      file: it/unibz/inf/ontop/model/term/NonGroundTerm.class
+      sourceDir: core/model/src/main/java
+      sourceFile: it/unibz/inf/ontop/model/term/NonGroundTerm.java
